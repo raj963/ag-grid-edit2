@@ -1,0 +1,68 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  
+  .container {
+    padding: 20px;
+    background-color: white;
+    max-width: 90%;
+    margin: auto;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .header {
+    font-size: 18px;
+    font-weight: bold;
+    padding-bottom: 10px;
+    border-bottom: 2px solid red;
+  }
+  
+  .tabs {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .tabs button {
+    padding: 10px 15px;
+    border: none;
+    background: lightgray;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .tabs .active {
+    background-color: red;
+    color: white;
+  }
+  
+  .filters {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+  }
+  
+  .filter {
+    background: #008000;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+  }
+  
+  .grid-container {
+    height: 400px;
+    width: 100%;
+    margin-top: 15px;
+  }
+  
+  .empty-state {
+    padding: 20px;
+    text-align: center;
+    font-size: 16px;
+    color: gray;
+  }
+  
