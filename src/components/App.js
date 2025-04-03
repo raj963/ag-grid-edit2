@@ -3,6 +3,13 @@ import { AgGridReact } from "ag-grid-react";
 import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-alpine.css";
 import "./styles.css";
+import CustomButton from "./CustomButton";
+import CustomTabs from "./CustomTabs";
+
+import GridFilter from "./GridFilter";
+// import "font-awesome/css/font-awesome.min.css"; // Import Font Awesome for icons
+
+
 
 const data = [
   { id: 1, incident: "INC490_", date: "2025-03-30 19:35", assignee: "Hector Arturo C", config: "WSIT-CS-DIOS", summary: "HSBCnet Availability", assignment: "HTSE-HSBCNet-Global", recommendation: "HTSE-HSBC-CONN" },
@@ -27,15 +34,20 @@ const App = () => {
     <div className="container">
       <div className="header">STAAR Recommended Group Incident</div>
       <div className="tabs">
-        <button className={activeTab === "tab1" ? "active" : ""} onClick={() => setActiveTab("tab1")}>Incident Open More Than 24 Hrs</button>
-        <button className={activeTab === "tab2" ? "active" : ""} onClick={() => setActiveTab("tab2")}>Unassigned Incident</button>
+        {/* <button className={activeTab === "tab1" ? "active" : ""} onClick={() => setActiveTab("tab1")}>Incident Open More Than 24 Hrs</button>
+        <button className={activeTab === "tab2" ? "active" : ""} onClick={() => setActiveTab("tab2")}>Unassigned Incident</button> */}
+         <CustomTabs />
       </div>
 
-      <div className="filters">
-        <span className="filter">Showing 4 of 60174 rows</span>
-        <span className="filter">Configuration Item "WSIT-CS-DIOS"</span>
-        <span className="filter">Status: New</span>
-      </div>
+      <div style={{ padding: "20px" }}>
+      <GridFilter />
+    </div>
+
+      <div style={{ display: "flex", gap: "10px" }}>
+      <CustomButton label="Showing 4 of 60174 rows" color="green" onClose={() => console.log("Closed: Showing 4 of 60174 rows")} />
+      <CustomButton label='Configuration Item "WSIT-CS-DIOS"' color="red" onClose={() => console.log('Closed: Configuration Item "WSIT-CS-DIOS"')} />
+      <CustomButton label="Status : New" color="red" onClose={() => console.log("Closed: Status : New")} />
+    </div>
 
       <div className="tab-content">
         {activeTab === "tab1" && (
